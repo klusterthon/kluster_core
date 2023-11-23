@@ -4,12 +4,33 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-whitenoise[brotli] = "*"
 django = "*"
 djangorestframework = "*"
-gunicorn = "*" 
+pillow = "10.0.1"
+dj-url-filter = "*"
+six = "*"
+django-cors-headers = "*"
+requests = "*"
+drf-writable-nested = "*"
+django-restql = "*"
+pytz = "*"
+python-socketio = "*"
+python-dotenv = "*"
+firebase-admin = "*"
+django-cloudinary-storage = "*"
+brotli = "*"
+whitenoise = "*"
+rest-framework-generic-relations = "*"
+django-debug-toolbar = "*"
+daphne = "*"
+dj-database-url = "*"
+psycopg = "*"
+celery = "*"
+pymemcache = "*"
 
 [dev-packages]
+ngrok = "*"
+uvicorn = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "3.12"
