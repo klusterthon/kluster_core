@@ -1,8 +1,19 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser 
 
-User = get_user_model()
-
+class User(AbstractUser):
+    class Gender(models.TextChoices):
+        MALE = "MALE", "male"
+        FEMALE = "FEMALE", "female"
+        OTHERS = "OTHERS", "others"
+        BISEXUAL = "BISEXUAL", "bisexual"
+        TRANSGENDER = "TRANSGENDER", "transgender"
+        
+    dob = models.DateTimeField()
+    sex = models.TextField(choices=Gender.choices)
+    
+    class Meta:
+        pass
 
 class Personnel(models.Model):
     """
@@ -23,4 +34,18 @@ class Personnel(models.Model):
 
 
 class Patient(models.Model):
-    pass
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
+
+# todo 
+class Allergy(models.Model):
+    class AllergyType(models.TextChoices):
+        FOOD = "FOOD", "FOOD"
+        DRUG = "DRUG", "DRUG"
+        OTHERS = "OTHERS", "OTHERS"
+    
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    type = models.TextField(choices=AllergyType.choices)
+    drug = None 
+    note = models.TextField()
+    

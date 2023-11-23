@@ -1,16 +1,13 @@
-from rest_framework.viewsets import GenericViewSet
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin
+from rest_framework.viewsets import ModelViewSet 
 
+from .models import Dosage, Prescription
+from .serializers import DosageSerializer, PrescriptionSerializer
 
-from kluster_core.permissions import PatientOnly
-
-class DrugViewSet(GenericViewSet):
-    pass 
-
-class DosageViewSet(GenericViewSet):
-    pass 
-
-class DosageUsageViewSet(GenericViewSet):
-    permission_classes = (IsAuthenticated, PatientOnly)
+class DosageViewSet(ModelViewSet):
+    queryset = Dosage.objects.all()
+    serializer_class = DosageSerializer 
+    
+class PrescriptionViewSet(ModelViewSet):
+    queryset = Prescription.objects.all()
+    serializer_class = PrescriptionSerializer 
     
