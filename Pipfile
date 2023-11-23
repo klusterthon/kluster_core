@@ -4,6 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+whitenoise[brotli] = "*"
+django = "*"
+djangorestframework = "*"
+gunicorn = "*" 
 
 [dev-packages]
 
