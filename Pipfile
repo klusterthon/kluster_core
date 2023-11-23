@@ -27,6 +27,7 @@ dj-database-url = "*"
 psycopg = "*"
 celery = "*"
 pymemcache = "*"
+drf-yasg = "*"
 
 [dev-packages]
 ngrok = "*"
