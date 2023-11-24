@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     
     'account.apps.AccountConfig',
-    'prescription_tracker.apps.PrescriptionTrackerConfig',
+    'inventory.apps.InventoryConfig',
+    'tracker.apps.TrackerConfig',
 ]
 
 MIDDLEWARE = [
